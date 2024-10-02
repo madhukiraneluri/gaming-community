@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone Community - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 10px 20px;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .featured-games {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px; /* Adds space between game cards */
+        }
+
+        .game {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            background: #f9f9f9; /* Slight background for the game card */
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .game img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            max-height: 150px; /* Set a max height for images */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        .game h3 {
+            margin: 10px 0; /* Space above and below the title */
+            color: #333; /* Title color */
+            font-size: 18px; /* Title font size */
+        }
+
+        .game p {
+            color: #666; /* Description color */
+            font-size: 14px; /* Description font size */
+            margin-bottom: 0; /* No extra space below paragraph */
+        }
+
+        .game:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        }
+
+        /* Modal styles */
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        /* Added styles for paragraph visibility */
+        .modal-content p {
+            color: #333; /* Dark text color for visibility */
+            font-size: 16px; /* Increase font size for readability */
+            margin: 10px 0; /* Add spacing above and below */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">GameZone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to GameZone Community</h1>
+        <p>Connect, compete, and collaborate with gamers worldwide.</p>
+        <a href="signup.html"><button>Join Now</button></a>
+    </section>
+
+    <section class="featured-games">
+        <h2>Top Trending Games</h2>
+        <div class="game">
+            <img src="imgs/game1.jpeg" alt="Cyber Warriors">
+            <h3>Cyber Warriors</h3>
+            <p>Enter the futuristic battle world.</p>
+        </div>
+        <div class="game">
+            <img src="imgs/game2.jpeg" alt="Mystic Quest">
+            <h3>Mystic Quest</h3>
+            <p>Embark on an epic journey through enchanted lands.</p>
+        </div>
+        <div class="game">
+            <img src="imgs/game3.jpeg" alt="Galactic Explorers">
+            <h3>Galactic Explorers</h3>
+            <p>Discover new planets and civilizations in outer space.</p>
+        </div>
+        <div class="game">
+            <img src="imgs/game4.jpeg" alt="Zombie Apocalypse">
+            <h3>Zombie Apocalypse</h3>
+            <p>Survive the undead hordes and reclaim the city.</p>
+        </div>
+        <div class="game">
+            <img src="imgs/game5.jpeg" alt="Fantasy Arena">
+            <h3>Fantasy Arena</h3>
+            <p>Battle legendary creatures in an epic arena.</p>
+        </div>
+        <div class="game">
+            <img src="imgs/game6.jpeg" alt="Racing Rivals">
+            <h3>Racing Rivals</h3>
+            <p>Challenge friends in high-speed races on dynamic tracks.</p>
+        </div>
+        <div class="game">
+            <img src="imgs/game7.jpeg" alt="Puzzle Master">
+            <h3>Puzzle Master</h3>
+            <p>Solve mind-bending puzzles to unlock new challenges.</p>
+        </div>
+        <div class="game">
+            <img src="imgs/game8.jpeg" alt="Stealth Assassin">
+            <h3>Stealth Assassin</h3>
+            <p>Eliminate targets without being detected in a thrilling stealth game.</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GameZone Community. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.game').forEach(game => {
+            game.addEventListener('click', () => {
+                const gameTitle = game.querySelector('h3').innerText;
+                const gameDesc = game.querySelector('p').innerText;
+
+                // Create modal overlay
+                const modalOverlay = document.createElement('div');
+                modalOverlay.classList.add('modal-overlay');
+
+                // Create modal content
+                const modalContent = document.createElement('div');
+                modalContent.classList.add('modal-content');
+                modalContent.innerHTML = `
+                    <h2>${gameTitle}</h2>
+                    <p>${gameDesc}</p>
+                    <button id="closeModal">Close</button>
+                `;
+                modalOverlay.appendChild(modalContent);
+                document.body.appendChild(modalOverlay);
+
+                // Close modal
+                document.getElementById('closeModal').addEventListener('click', () => {
+                    document.body.removeChild(modalOverlay);
+                });
+
+                // Close modal on overlay click
+                modalOverlay.addEventListener('click', (e) => {
+                    if (e.target === modalOverlay) {
+                        document.body.removeChild(modalOverlay);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
